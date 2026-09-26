@@ -14,7 +14,7 @@ public class ControlInversion : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
-            m_GameManager.InvertControls();
+            m_GameManager.invertControls = !m_GameManager.invertControls;
             gameObject.SetActive(false);
         }
     }

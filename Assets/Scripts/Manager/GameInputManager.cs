@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class GameInputManager : MonoBehaviour
 {
@@ -10,16 +9,17 @@ public class GameInputManager : MonoBehaviour
     private GameManager m_GameManager;
 
     public float movement {  get; private set; }
+    public float invertedMovement { get; private set; }
 
     private void Awake()
     {
         if(!Instance)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
 
         m_GameInputs = new GameInputs();
+        m_GameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnEnable()
@@ -41,20 +41,25 @@ public class GameInputManager : MonoBehaviour
         movement = ctx.ReadValue<float>();
     }
 
-    void InvertMovement(InputAction.CallbackContext ctx)
+    void InvertedMovement(InputAction.CallbackContext ctx)
     {
-        movement = ctx.ReadValue<float>();
+        invertedMovement = ctx.ReadValue<float>();
     }
 
-    public void InvertControl()
+    private void Update()
     {
-        m_GameInputs.Player.MovementInverted.Enable();
-        m_GameInputs.Player.MovementInverted.performed += InvertMovement;
-    }
+        if(m_GameManager.invertControls)
+        {
+            m_GameInputs.Player.MovementInverted.Enable();
+            m_GameInputs.Player.MovementInverted.performed += InvertedMovement;
+            m_GameInputs.Player.Movement.performed -= Movement;
+        }
+        else
+        {
+            m_GameInputs.Player.MovementInverted.Disable();
+            m_GameInputs.Player.MovementInverted.performed -= InvertedMovement;
+            m_GameInputs.Player.Movement.performed += Movement;
 
-    public void RevertControl()
-    {
-        m_GameInputs.Player.MovementInverted.Disable();
-        m_GameInputs.Player.MovementInverted.performed -= InvertMovement;
+        }
     }
 }

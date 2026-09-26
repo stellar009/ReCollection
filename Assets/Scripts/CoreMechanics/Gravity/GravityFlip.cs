@@ -13,7 +13,7 @@ public class GravityFlip : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            gameManager.FlipGravity();
+            gameManager.FlipGravity(collision.collider.attachedRigidbody);
             gameObject.SetActive(false);
         }
     }
