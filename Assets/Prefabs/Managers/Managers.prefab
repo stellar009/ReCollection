@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b1702125fae9f46887abf6be269742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  isFlipped: 0
   invertControls: 0
+  isPlayerCollided: 0
 --- !u!1 &7216609861424746772
 GameObject:
   m_ObjectHideFlags: 0

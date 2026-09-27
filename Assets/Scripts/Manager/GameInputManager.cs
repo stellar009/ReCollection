@@ -9,7 +9,6 @@ public class GameInputManager : MonoBehaviour
     private GameManager m_GameManager;
 
     public float movement {  get; private set; }
-    public float invertedMovement { get; private set; }
 
     private void Awake()
     {
@@ -41,25 +40,13 @@ public class GameInputManager : MonoBehaviour
         movement = ctx.ReadValue<float>();
     }
 
-    void InvertedMovement(InputAction.CallbackContext ctx)
+    public void DisableControls()
     {
-        invertedMovement = ctx.ReadValue<float>();
+        m_GameInputs.Player.Disable();
     }
 
-    private void Update()
+    public void EnableControls()
     {
-        if(m_GameManager.invertControls)
-        {
-            m_GameInputs.Player.MovementInverted.Enable();
-            m_GameInputs.Player.MovementInverted.performed += InvertedMovement;
-            m_GameInputs.Player.Movement.performed -= Movement;
-        }
-        else
-        {
-            m_GameInputs.Player.MovementInverted.Disable();
-            m_GameInputs.Player.MovementInverted.performed -= InvertedMovement;
-            m_GameInputs.Player.Movement.performed += Movement;
-
-        }
+        m_GameInputs.Player.Enable();
     }
 }

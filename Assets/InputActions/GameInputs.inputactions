@@ -17,16 +17,6 @@
                     "priority": 0
                 },
                 {
-                    "name": "MovementInverted",
-                    "type": "Button",
-                    "id": "0bd7b1a2-8fb3-4a9e-ae26-acf2a425ca34",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "1271f53c-d2f3-49d2-a83b-47616bf49943",
@@ -88,39 +78,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "86cd799e-34dc-4960-84b7-3af77512323a",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementInverted",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "45a518f8-30e8-42a7-87a0-0db1fd68f63e",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementInverted",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "e2401199-80bf-482c-978f-22d8102fbe0f",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementInverted",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GravityFlip : MonoBehaviour
+public class DeadZone : MonoBehaviour
 {
     private GameManager m_GameManager;
 
@@ -11,10 +11,9 @@ public class GravityFlip : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if(collision.collider.CompareTag("Player"))
         {
-            m_GameManager.FlipGravity(collision.collider.attachedRigidbody);
-            gameObject.SetActive(false);
+            m_GameManager.PlayerDead(collision.collider.GetComponent<Rigidbody2D>());
         }
     }
 }
