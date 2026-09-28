@@ -1,5 +1,5 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class TutorialManager : MonoBehaviour
     public GameObject infoPanel;
     public GameObject gameOverPanel;
 
+    public TextMeshProUGUI m_Tmp;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,11 +18,6 @@ public class TutorialManager : MonoBehaviour
         DisablePanel(gameOverPanel);
         m_GameManager = FindObjectOfType<GameManager>();
         EnablePanel(infoPanel);
-    }
-
-    private void Update()
-    {
-        EnableGameOverPanel();
     }
 
     public void EnablePanel(GameObject panel)
@@ -35,16 +32,10 @@ public class TutorialManager : MonoBehaviour
         GameInputManager.Instance.EnableControls();
     }
 
-    void EnableGameOverPanel()
+    public void EnableGameOverPanel(string gameOverText, Color textColor = default)
     {
-        if(m_GameManager.isPlayerCollided)
-        {
-            EnablePanel(gameOverPanel);
-        }
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        m_Tmp.color = textColor;
+        m_Tmp.text = gameOverText;
+        EnablePanel(gameOverPanel);
     }
 }

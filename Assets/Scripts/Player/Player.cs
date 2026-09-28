@@ -37,7 +37,6 @@ public class Player : MonoBehaviour
             m_SpriteRenderer.flipX = true;
         }
 
-
         m_PlayerMovement = m_GameManager.invertControls ? -GameInputManager.Instance.movement : GameInputManager.Instance.movement;
 
         m_Rigidbody.linearVelocity = new Vector2(m_PlayerMovement * speed, m_Rigidbody.position.y);

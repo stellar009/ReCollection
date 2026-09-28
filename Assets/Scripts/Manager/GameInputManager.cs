@@ -6,7 +6,6 @@ public class GameInputManager : MonoBehaviour
     public static GameInputManager Instance;
 
     private GameInputs m_GameInputs;
-    private GameManager m_GameManager;
 
     public float movement {  get; private set; }
 
@@ -18,7 +17,6 @@ public class GameInputManager : MonoBehaviour
         }
 
         m_GameInputs = new GameInputs();
-        m_GameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnEnable()
