@@ -67,4 +67,23 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("First");
     }
+
+    public void PauseGame(bool isPaused)
+    {
+        if(isPaused)
+        {
+            if (m_UIManager)
+                m_UIManager.EnablePauseMenu();
+            else if (m_TutorialManager)
+                m_TutorialManager.EnablePauseMenu();
+
+        }
+        else
+        {
+            if(m_UIManager)
+                m_UIManager.DisablePauseMenu();
+            else if (m_TutorialManager)
+                m_TutorialManager.DisablePauseMenu();
+        }
+    }
 }

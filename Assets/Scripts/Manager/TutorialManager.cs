@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    private GameManager m_GameManager;
-
     [Header("UI Settimgs")]
     public GameObject infoPanel;
     public GameObject gameOverPanel;
+    public GameObject pauseMenu;
 
     public TextMeshProUGUI m_Tmp;
 
@@ -16,8 +15,8 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         DisablePanel(gameOverPanel);
-        m_GameManager = FindObjectOfType<GameManager>();
         EnablePanel(infoPanel);
+        DisablePanel(pauseMenu);
     }
 
     public void EnablePanel(GameObject panel)
@@ -37,5 +36,15 @@ public class TutorialManager : MonoBehaviour
         m_Tmp.color = textColor;
         m_Tmp.text = gameOverText;
         EnablePanel(gameOverPanel);
+    }
+
+    public void EnablePauseMenu()
+    {
+        EnablePanel(pauseMenu);
+    }
+
+    public void DisablePauseMenu()
+    {
+        DisablePanel(pauseMenu);
     }
 }
