@@ -28,15 +28,14 @@ public class Player : MonoBehaviour
 
     void PlayerMovement()
     {
-        if(GameInputManager.Instance.movement == 1)
+        if(GameInputManager.Instance.isPaused)
         {
-            m_SpriteRenderer.flipX = false;
+            m_Rigidbody.bodyType = RigidbodyType2D.Static;
         }
-        else if(GameInputManager.Instance.movement == -1)
+        else
         {
-            m_SpriteRenderer.flipX = true;
+            m_Rigidbody.bodyType= RigidbodyType2D.Dynamic;
         }
-
         m_PlayerMovement = m_GameManager.invertControls ? -GameInputManager.Instance.movement : GameInputManager.Instance.movement;
 
         m_Rigidbody.linearVelocity = new Vector2(m_PlayerMovement * speed, m_Rigidbody.position.y);

@@ -50,6 +50,7 @@ public class GameInputManager : MonoBehaviour
     void PauseGame(InputAction.CallbackContext ctx)
     {
         isPaused = !isPaused;
+        Debug.Log(isPaused);
         m_GameManager.PauseGame(isPaused);
     }
 
@@ -61,5 +62,17 @@ public class GameInputManager : MonoBehaviour
     public void EnableControls()
     {
         m_GameInputs.Player.Enable();
+    }
+
+    public void EnableUIControls(bool enable)
+    {
+        if(enable)
+        {
+            m_GameInputs.UI.Enable();
+        }
+        else
+        {
+            m_GameInputs.UI.Disable();
+        }
     }
 }

@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SystemReader : MonoBehaviour
 {
     [Header("UI Setup")]
     public TextMeshProUGUI playerNameText;
-    public TextMeshProUGUI batteryLevel;
     public TextMeshProUGUI logs;
+    public TextMeshProUGUI appVersion;
 
     private string m_DeviceName;
 
@@ -16,13 +17,17 @@ public class SystemReader : MonoBehaviour
         logs.text = string.Empty;
 
         m_DeviceName = SystemInfo.deviceName;
-        playerNameText.text = $"Hi,<color=#00B4FF> {m_DeviceName.ToUpperInvariant()} </color>";
+        playerNameText.text = $"Hi,<color=#FFFB00> {m_DeviceName.ToUpperInvariant()} </color>";
 
-        batteryLevel.text = $"Battery Level: <color=yellow>{SystemInfo.batteryLevel * 100} ({SystemInfo.batteryStatus})</color>";
+
+        appVersion.text = string.Empty;
+        appVersion.text = $"<color=#38b6ff>Application Version: </color><color=#ff3131>{Application.version}</color>";
     }
 
     public void Settings()
     {
-        logs.text = $"<color=yellow>{SystemInfo.deviceModel}</color> Doesnot Support Setting Modification";
+        EventSystem.current.SetSelectedGameObject(null);
+
+        logs.text = $"<color=#38b6ff>{SystemInfo.deviceModel}</color>Doesnot Support Setting Modification";
     }
 }

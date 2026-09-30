@@ -8,7 +8,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI gamePanelText;
     public GameObject pauseMenu;
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,10 +15,9 @@ public class UIManager : MonoBehaviour
         DisablePanel(pauseMenu);
     }
 
-    public void EnableGamePanel(string text, Color textColor = default)
+    public void EnableGamePanel(string text)
     {
         gamePanelText.text = text;
-        gamePanelText.color = textColor;
         EnablePanel(gamePanel);
     }
 

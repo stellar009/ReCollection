@@ -1,4 +1,7 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,19 +11,22 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool isPlayerCollided;
     public float gravitationForce = 50f;
 
+    public TextMeshProUGUI levelText;
+    public Volume volume;
 
     private UIManager m_UIManager;
-    private TutorialManager m_TutorialManager;
+    private DepthOfField m_Dof;
 
-    private void Awake()
-    {
-        QualitySettings.vSyncCount = 1;
-    }
 
     private void Start()
     {
-        m_TutorialManager = FindObjectOfType<TutorialManager>();
         m_UIManager = FindObjectOfType<UIManager>();
+
+        if (!levelText) return;
+
+        SceneName(levelText);
+
+        EnableCursor(false);
     }
 
     public void FlipGravity(Rigidbody2D rb)
@@ -33,14 +39,10 @@ public class GameManager : MonoBehaviour
     {
         GameInputManager.Instance.DisableControls();
 
-        if (m_TutorialManager)
-        {
-            m_TutorialManager.EnableGameOverPanel($"Completed", Color.softYellow);
-        }
-        else if (m_UIManager)
-        {
-            m_UIManager.EnableGamePanel($"{SceneManager.GetActiveScene().name} Cleared", Color.softYellow);
-        }
+        m_UIManager.EnableGamePanel($"{SceneManager.GetActiveScene().name} Cleared");
+
+        GameInputManager.Instance.EnableUIControls(false);
+        EnableCursor(true);
     }
 
     public void PlayerDead(Rigidbody2D playerRB)
@@ -48,14 +50,10 @@ public class GameManager : MonoBehaviour
         playerRB.gameObject.SetActive(false);
         isPlayerCollided = true;
 
-        if(m_TutorialManager)
-        {
-            m_TutorialManager.EnableGameOverPanel($"Failed", Color.softYellow);
-        }
-        else if(m_UIManager)
-        {
-            m_UIManager.EnableGamePanel($"{SceneManager.GetActiveScene().name} Failed", Color.softYellow);
-        }
+        m_UIManager.EnableGamePanel($"{SceneManager.GetActiveScene().name} Failed");
+
+        GameInputManager.Instance.EnableUIControls(false);
+        EnableCursor(true);
     }
 
     public void RestartGame()
@@ -72,18 +70,43 @@ public class GameManager : MonoBehaviour
     {
         if(isPaused)
         {
-            if (m_UIManager)
-                m_UIManager.EnablePauseMenu();
-            else if (m_TutorialManager)
-                m_TutorialManager.EnablePauseMenu();
+            m_UIManager.EnablePauseMenu();
 
+            EnableCursor(true);
         }
         else
         {
-            if(m_UIManager)
-                m_UIManager.DisablePauseMenu();
-            else if (m_TutorialManager)
-                m_TutorialManager.DisablePauseMenu();
+            m_UIManager.DisablePauseMenu();
+
+            EnableCursor(false);
+        }
+    }
+
+    void SceneName(TextMeshProUGUI text)
+    {
+        text.text = SceneManager.GetActiveScene().name;
+    }
+
+    public void EnableCursor(bool enable)
+    {
+        Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = enable;
+
+        EnableBlur(enable);
+    }
+
+    void EnableBlur(bool blur)
+    {
+        volume.profile.TryGet<DepthOfField>(out m_Dof);
+
+        if(blur && m_Dof != null)
+        {
+            m_Dof.active = true;
+            m_Dof.focusDistance.value = 0.1f;
+        }
+        else
+        {
+            m_Dof.active = false;
         }
     }
 }
