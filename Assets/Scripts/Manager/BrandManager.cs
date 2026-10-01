@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class BrandManager : MonoBehaviour
@@ -7,6 +8,9 @@ public class BrandManager : MonoBehaviour
     [Header("Panels")]
     public GameObject[] panels;
     public float sequenceDelay = 2f;
+
+    [Header("Optimizations")]
+    [SerializeField] private ShaderVariantCollection m_ShaderVariantCollection;
 
     private WaitForSeconds delay;
     private int panelsLength;
@@ -17,6 +21,10 @@ public class BrandManager : MonoBehaviour
     private void Awake()
     {
         QualitySettings.vSyncCount = 1;
+
+        GraphicsSettings.useScriptableRenderPipelineBatching = true;
+
+        m_ShaderVariantCollection.WarmUp();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

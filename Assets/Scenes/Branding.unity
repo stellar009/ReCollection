@@ -331,6 +331,7 @@ MonoBehaviour:
   - {fileID: 2072936735}
   - {fileID: 279831641}
   sequenceDelay: 2
+  m_ShaderVariantCollection: {fileID: 20000000, guid: b6c9f310d97ec7847bd49ceb90f1a299, type: 2}
 --- !u!4 &1429725166
 Transform:
   m_ObjectHideFlags: 0

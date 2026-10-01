@@ -17,11 +17,11 @@ public class SystemReader : MonoBehaviour
         logs.text = string.Empty;
 
         m_DeviceName = SystemInfo.deviceName;
-        playerNameText.text = $"Hi,<color=#FFFB00> {m_DeviceName.ToUpperInvariant()} </color>";
+        playerNameText.text = $"<color=#38b6ff>Player Name:</color><color=#ff3131> {m_DeviceName.ToUpperInvariant()} </color>";
 
 
         appVersion.text = string.Empty;
-        appVersion.text = $"<color=#38b6ff>Application Version: </color><color=#ff3131>{Application.version}</color>";
+        appVersion.text = $"<color=#ff3131>{Application.version}</color>";
     }
 
     public void Settings()

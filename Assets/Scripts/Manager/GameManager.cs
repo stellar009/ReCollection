@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
     private DepthOfField m_Dof;
 
 
+    private void Awake()
+    {
+        EnableCursor(false);
+    }
+
     private void Start()
     {
         m_UIManager = FindObjectOfType<UIManager>();
@@ -25,8 +30,6 @@ public class GameManager : MonoBehaviour
         if (!levelText) return;
 
         SceneName(levelText);
-
-        EnableCursor(false);
     }
 
     public void FlipGravity(Rigidbody2D rb)
@@ -108,5 +111,10 @@ public class GameManager : MonoBehaviour
         {
             m_Dof.active = false;
         }
+    }
+
+    public void ReActivateObject(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
     }
 }

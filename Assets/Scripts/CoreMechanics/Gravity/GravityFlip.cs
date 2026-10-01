@@ -10,7 +10,7 @@ public class GravityFlip : MonoBehaviour
     private void Start()
     {
         m_GameManager = FindObjectOfType<GameManager>();
-        m_AudioSrc = FindObjectOfType<AudioSource>();
+        m_AudioSrc = FindFirstObjectByType<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,7 +19,13 @@ public class GravityFlip : MonoBehaviour
         {
             m_AudioSrc.PlayOneShot(gravityShift);
             m_GameManager.FlipGravity(collision.collider.attachedRigidbody);
+            Invoke(nameof(Reactivation), 4f);
             gameObject.SetActive(false);
         }
+    }
+
+    void Reactivation()
+    {
+        m_GameManager.ReActivateObject(gameObject);
     }
 }
