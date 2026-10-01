@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e86f0708b1a6c144993a4dab8e3c29c6, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2f03dbbc418eb3429c13e370771c91d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -501,7 +501,11 @@ PrefabInstance:
     - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 910a04c3620bb7443b37b296872b85ba, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: e88b39aea5ed5a84487c5c72ea3fdd4a, type: 2}
     - target: {fileID: 4525242753345644000, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Name
       value: Level 2
@@ -548,7 +552,7 @@ GameObject:
   - component: {fileID: 831629234}
   - component: {fileID: 831629233}
   m_Layer: 5
-  m_Name: Player Name (1)
+  m_Name: SampleTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1090,7 +1094,11 @@ PrefabInstance:
     - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 22221bf9e52588546bbb4d0c1afbb6ca, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 7046ed21595aedf45a505dbee458d3ed, type: 2}
     - target: {fileID: 4525242753345644000, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Name
       value: Level 3
@@ -1216,7 +1224,11 @@ PrefabInstance:
     - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4b0eca4caf1d77b40b2b4ca15203279c, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: dd6171744253dfb4b9ff3a094fc74446, type: 2}
     - target: {fileID: 4525242753345644000, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Name
       value: Quit
@@ -1362,7 +1374,11 @@ PrefabInstance:
     - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88b9b2066c05b9f4c80ec985c5dce462, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 60629a24920726046848039d8df72ef1, type: 2}
     - target: {fileID: 4525242753345644000, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Name
       value: Settings
@@ -1874,7 +1890,11 @@ PrefabInstance:
     - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cf53fd59c0c36514a979894eded23cc2, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 316b5fa19c856f947b6fc02609fe5450, type: 2}
     - target: {fileID: 4525242753345644000, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Name
       value: Level 1
@@ -1997,6 +2017,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077240164935561912, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: a427ec8de75eb954883c3b787af92587, type: 2}
     - target: {fileID: 4525242753345644000, guid: d2c9bf5dde9bb524b8c2621b3b4b919a, type: 3}
       propertyPath: m_Name
       value: Tutorial

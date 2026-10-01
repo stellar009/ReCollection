@@ -2619,11 +2619,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 7227729376930787338, guid: 2b43ffb65c088a14ba9a6adde40b6e57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 895364199585899518}
+    - target: {fileID: 7227729376930787338, guid: 2b43ffb65c088a14ba9a6adde40b6e57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8628269251477677238, guid: 2b43ffb65c088a14ba9a6adde40b6e57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 895364199585899518}
     - target: {fileID: 8628269251477677238, guid: 2b43ffb65c088a14ba9a6adde40b6e57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674080377854568678, guid: 2b43ffb65c088a14ba9a6adde40b6e57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 895364199585899518}
+    - target: {fileID: 8674080377854568678, guid: 2b43ffb65c088a14ba9a6adde40b6e57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
       objectReference: {fileID: 0}

@@ -5,6 +5,7 @@ public class Portals : MonoBehaviour
     public Transform spawnPoint;
     public AudioClip tpAudio;
 
+    private GameManager m_GameManager;
     private AudioSource m_AudioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -12,6 +13,7 @@ public class Portals : MonoBehaviour
     {
         if (spawnPoint == null) Debug.Log("No Spawn Point");
         m_AudioSource = FindFirstObjectByType<AudioSource>();
+        m_GameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,6 +23,7 @@ public class Portals : MonoBehaviour
             m_AudioSource.PlayOneShot(tpAudio);
 
             MoveObject(collision.collider.gameObject, spawnPoint);
+            Invoke(nameof(Reactivation), 4f);
 
             gameObject.SetActive(false);
         }
@@ -31,5 +34,10 @@ public class Portals : MonoBehaviour
         gameObject.SetActive(false);
         gameObject.transform.position = target.position;
         gameObject.SetActive(true);
+    }
+
+    void Reactivation()
+    {
+        m_GameManager.ReActivateObject(gameObject);
     }
 }

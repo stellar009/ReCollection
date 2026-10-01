@@ -3337,6 +3337,10 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.8663769
       objectReference: {fileID: 0}
+    - target: {fileID: 8790838237609423683, guid: 0935e4078811c6640ad142e810014ca3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b13b74fd5c09e94479e3e588d26d2442, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6958,6 +6962,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.78039217
       objectReference: {fileID: 0}
+    - target: {fileID: 8790838237609423683, guid: 0935e4078811c6640ad142e810014ca3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b696e1745ecfcb0448a2d481a174df0e, type: 2}
     m_RemovedComponents:
     - {fileID: 6572775363660140114, guid: 0935e4078811c6640ad142e810014ca3, type: 3}
     m_RemovedGameObjects: []
@@ -6989,7 +6997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0348aabc53582d44b6acc81c7421ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControlInversion
-  ctrlShift: {fileID: 0}
+  ctrlShift: {fileID: 8300000, guid: f963c0263c0912942a968c30df5fc7c1, type: 3}
 --- !u!1001 &2076410445
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class CreditsSaver : MonoBehaviour
             return;
         }
 
-        string content = "Game by Crimson Duo\n\nCredits:\n Fonts from Google Fonts: Oxanium by sevmeyer";
+        string content = "Game by Crimson Duo\n\nCredits:\n Fonts from Google Fonts: Oxanium by sevmeyer \n\n Background Music from NCS: Elektronomia - Sky High";
 
         try
         {
