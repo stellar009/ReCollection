@@ -1,25 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// tiny helper script for buttons, basically just loads scenes and quits the game
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // loads a scene by name, just hook this up to a button in the inspector
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
+    // quits the game, for the quit button obviously
+    // (does nothing in the editor, only works in a build)
     public void QuitGame()
     {
         Application.Quit();
